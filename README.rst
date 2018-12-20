@@ -22,24 +22,15 @@ A pytest plugin to add markers based on fixtures used.
 
 ----
 
-This `pytest`_ plugin was generated with `Cookiecutter`_ along with `@hackebrot`_'s `cookiecutter-pytest-plugin`_ template.
+Why
+---
 
-
-Features
---------
-
-* TODO
-
-
-Requirements
-------------
-
-* TODO
+Ever found yourself wanting to run all tests that use a certain fixture? This plugin will allow you
+to do that.
 
 
 Installation
 ------------
-
 You can install "pytest-fixture-marker" via `pip`_ from `PyPI`_::
 
     $ pip install pytest-fixture-marker
@@ -47,8 +38,12 @@ You can install "pytest-fixture-marker" via `pip`_ from `PyPI`_::
 
 Usage
 -----
+Once installed, the plugin will automatically mark each test. Marker names are generated from the
+fixture names.::
 
-* TODO
+    $ # run all tests that use the tempdir fixture
+    $ pytest -m tempdir_fixture
+
 
 Contributing
 ------------
