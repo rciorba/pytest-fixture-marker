@@ -44,6 +44,17 @@ fixture names.::
     $ # run all tests that use the tempdir fixture
     $ pytest -m tempdir_fixture
 
+If you're not happy with the marker name convention of adding a _fixture suffix, you can configure
+it by setting fixture_marker_expression in pytest.ini (or tox.ini or setup.cfg), or by passing
+the --fixture-marker-expression argument. If both are specified the argument takes priority.
+
+The fixture marker expression must be a format string that will be filled with one positional
+argument: the fixture name. ::
+
+    $ # use custom marker naming expression
+    $ pytest -m foobar_tempdir --fixture-marker-expression=foobar_{}
+
+
 
 Contributing
 ------------

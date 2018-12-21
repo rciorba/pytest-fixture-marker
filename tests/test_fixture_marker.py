@@ -11,16 +11,32 @@ def test_help_message(testdir):
 
 
 @pytest.mark.parametrize(
-    "args",
+    "args,ini",
     [
-        ("-m foobar_fixture",),
-        ("-m foobar_fixture", "--fixture-marker-expression={}_fixture"),
-        ("-m fixture_foobar", "--fixture-marker-expression=fixture_{}"),
+        pytest.param(["-m foobar_fixture"], None, id="default"),
+        pytest.param(["-m foobar_ini"], "{}_ini", id="expression-ini"),
+        pytest.param(
+            ["-m foobar_arg", "--fixture-marker-expression={}_arg"], None, id="arg"
+        ),
+        pytest.param(
+            ["-m foobar_arg", "--fixture-marker-expression={}_arg"],
+            "{}_ini",
+            id="arg-over-ini",
+        ),
     ],
 )
-def test_mark_fixture(testdir, args):
+def test_mark_fixture(testdir, args, ini):
     """Test the tests are marked as expected"""
 
+    if ini is not None:
+        testdir.makeini(
+            """
+            [pytest]
+            fixture_marker_expression = {}
+            """.format(
+                ini
+            )
+        )
     # create a temporary pytest test module
     testdir.makepyfile(
         """
@@ -34,7 +50,7 @@ def test_mark_fixture(testdir, args):
 
         def test_not():
             pass
-    """
+        """
     )
 
     assert isinstance(
