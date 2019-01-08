@@ -25,9 +25,7 @@ A pytest plugin to add markers based on fixtures used.
 Why
 ---
 
-Ever found yourself wanting to run all tests that use a certain fixture? This plugin will allow you
-to do that.
-
+This plugin allows you to run all tests that require a certain fixture. This comes in handy if you're refactoring fixtures.
 
 Installation
 ------------
