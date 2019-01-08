@@ -25,7 +25,7 @@ A pytest plugin to add markers based on fixtures used.
 Why
 ---
 
-This plugin allows you to run all tests that require a certain fixture. This comes in handy if you're refactoring fixtures.
+This plugin allows you to selectively run tests that require a certain fixture. This comes in handy if you're refactoring fixtures.
 
 Installation
 ------------
@@ -37,7 +37,7 @@ You can install "pytest-fixture-marker" via `pip`_ from `PyPI`_::
 Usage
 -----
 Once installed, the plugin will automatically mark each test. Marker names are generated from the
-fixture names.::
+fixture names. ::
 
     $ # run all tests that use the tempdir fixture
     $ pytest -m tempdir_fixture
