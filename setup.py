@@ -13,7 +13,7 @@ def read(fname):
 
 setup(
     name="pytest-fixture-marker",
-    version="0.1.0",
+    version="1.0.0",
     author="Radu Ciorba",
     author_email="radu@devrandom.ro",
     maintainer="Radu Ciorba",
@@ -26,7 +26,7 @@ setup(
     python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
     install_requires=["pytest>=3.5.0"],
     classifiers=[
-        "Development Status :: 4 - Beta",
+        "Development Status :: 5 - Production/Stable",
         "Framework :: Pytest",
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Testing",
@@ -39,6 +39,7 @@ setup(
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: Implementation :: CPython",
         "Programming Language :: Python :: Implementation :: PyPy",
         "Operating System :: OS Independent",

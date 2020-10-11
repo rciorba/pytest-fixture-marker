@@ -16,6 +16,9 @@ matrix:
       - python: 3.8
         env: TOX_ENV=py38
         dist: xenial
+      - python: 3.9-dev
+        env: TOX_ENV=py39
+        dist: xenial
       - python: pypy
         env: TOX_ENV=pypy
       - python: 3.6
