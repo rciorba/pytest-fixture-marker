@@ -20,6 +20,13 @@ def pytest_collection_modifyitems(config, items):
     expression = config.getoption("fixture_marker_expression")
     if expression is None:
         expression = config.getini("fixture_marker_expression") or "fixture_{}"
+    markers = set()
     for item in items:
         for fixture in item.fixturenames:
-            item.add_marker(expression.format(fixture))
+            marker = expression.format(fixture)
+            if marker not in markers:
+                config.addinivalue_line(
+                    "markers", "{}: mark test as using the named fixture".format(marker)
+                )
+                markers.add(marker)
+            item.add_marker(marker)

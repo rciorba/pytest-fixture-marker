@@ -58,7 +58,7 @@ def test_mark_fixture(testdir, args, ini):
     )  # cause I already shot myself in the foot by not having a trailing comma
 
     # run pytest with the following cmd args
-    result = testdir.runpytest("-v", *args)
+    result = testdir.runpytest("-v", "--strict-markers", *args)
 
     # fnmatch_lines does an assertion internally
     # check we collect 2 but only run the test using the fixture

@@ -5,3 +5,4 @@ Changelog
 ------------------
 
 * change default marker expression to fix https://github.com/rciorba/pytest-fixture-marker/issues/2
+* register markers to the plugin works with --strict-markers
