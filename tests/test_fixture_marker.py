@@ -13,15 +13,15 @@ def test_help_message(testdir):
 @pytest.mark.parametrize(
     "args,ini",
     [
-        pytest.param(["-m foobar_fixture"], None, id="default"),
-        pytest.param(["-m foobar_ini"], "{}_ini", id="expression-ini"),
+        pytest.param(["-m fixture_foobar"], None, id="default"),
+        pytest.param(["-m foobar_suffix"], "{}_suffix", id="expression-suffix"),
         pytest.param(
             ["-m foobar_arg", "--fixture-marker-expression={}_arg"], None, id="arg"
         ),
         pytest.param(
             ["-m foobar_arg", "--fixture-marker-expression={}_arg"],
             "{}_ini",
-            id="arg-over-ini",
+            id="arg-has-precedence-over-ini",
         ),
     ],
 )
