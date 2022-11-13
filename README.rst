@@ -10,14 +10,9 @@ pytest-fixture-marker
     :target: https://pypi.org/project/pytest-fixture-marker
     :alt: Python versions
 
-.. image:: https://travis-ci.org/rciorba/pytest-fixture-marker.svg?branch=master
-    :target: https://travis-ci.org/rciorba/pytest-fixture-marker
-    :alt: See Build Status on Travis CI
-
-.. image:: https://ci.appveyor.com/api/projects/status/github/rciorba/pytest-fixture-marker?branch=master
-    :target: https://ci.appveyor.com/project/rciorba/pytest-fixture-marker/branch/master
-    :alt: See Build Status on AppVeyor
-
+.. image:: https://github.com/rciorba/pytest-fixture-marker/workflows/Test/badge.svg?branch=master
+     :target: https://github.com/rciorba/pytest-fixture-marker/actions?workflow=Test
+     :alt: CI Status
 A pytest plugin to add markers based on fixtures used.
 
 ----
